@@ -4,7 +4,7 @@
    $num_e1 = NUM_E;
    echo '$num_e1 = '.$num_e1. ' - '.gettype($num_e1).'<br>';
      echo '<br>';
-/*
+
 //1
      echo 'Строковый тип'.'<br>';
      settype($num_e1, string);
@@ -18,5 +18,5 @@
 //3
      echo 'Булевый тип'.'<br>';
      settype($num_e1, bool);
-     echo '$num_e1 = '.$num_e1. ' - '.gettype($num_e1).'<br>';*/
+     echo '$num_e1 = '.$num_e1. ' - '.gettype($num_e1).'<br>';
 ?>
