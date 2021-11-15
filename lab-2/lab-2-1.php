@@ -23,14 +23,30 @@
   echo 'Сортировка массива'.'<br>';
 
   for ($i=0; $i<count($rez);$i++){
-	  for ($k=$i+1; $k<count($rez);$k++){
-	  if ($rez[$i]>$rez[$k]) {
-		  $j=$rez[$k];
-		  $rez[$i]=$c;
-		  $rez[$k]=$rez[$i];
-	  }}
-	for ($i=0; $i<count($rez);$i++){
+	  for ($k=0; $k<count($rez);$k++){
+	  if ($rez[$i]<$rez[$k]) {
+		  $j=$rez[$i];
+		  $rez[$i]=$rez[$k];
+		  $rez[$k]=$j;
+		   }
+	}
+ }
+   for ($i=0; $i<count($rez);$i++){
 	  echo $rez[$i].' ';
   }
+   echo '<br>'.'<br>'; 
+  //Удалене 1st элемента массива rez
+  echo 'Удаление первого элемента массива'.'<br>';
+  unset ($rez[0]);
+  for ($i=0; $i<count($rez);$i++){
+	  echo $rez[$i].' ';
   }
+     echo '<br>'.'<br>'; 
+  //Удаление повторяющихся элементов
+  echo 'Удаление повторяющихся элементов'.'<br>';
+  $rez1=array_unique($rez);
+  for ($i=0; $i<count($rez1);$i++){
+	  echo $rez1[$i].' ';
+  }
+  
 ?>
