@@ -24,3 +24,11 @@
  <li><a href="http://phpgibadullina/lab-1/lab-2-10.php">Lab-2-10</a></li>
  <li><a href="http://phpgibadullina/lab-1/lab-2-11.php">Lab-2-11</a></li>
     </ul>
+<p>Лабораторная работа № 2<p> 
+  <ul>
+  <p>Часть 1<p>
+  <li><a href="http://phpgibadullina/lab-2/lab-2-1.php">Lab-2-1</a></li>
+ <li><a href="http://phpgibadullina/lab-2/lab-2-2.php">Lab-2-2</a></li>
+ <li><a href="http://phpgibadullina/lab-2/lab-2-3.php">Lab-2-3</a></li>
+  <p>Часть 2<p> 
+  </ul>
