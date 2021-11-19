@@ -28,7 +28,8 @@
   <ul>
   <p>Часть 1<p>
   <li><a href="http://phpgibadullina/lab-2/lab-2-1.php">Lab-2-1</a></li>
- <li><a href="http://phpgibadullina/lab-2/lab-2-2.php">Lab-2-2</a></li>
- <li><a href="http://phpgibadullina/lab-2/lab-2-3.php">Lab-2-3</a></li>
+  <li><a href="http://phpgibadullina/lab-2/lab-2-2.php">Lab-2-2</a></li>
+  <li><a href="http://phpgibadullina/lab-2/lab-2-3.php">Lab-2-3</a></li>
+ 
   <p>Часть 2<p> 
   </ul>
