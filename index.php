@@ -45,3 +45,6 @@
   <li><a href="http://phpgibadullina/lab-3/f5.html">Упр 3-5</a></li>
   <li><a href="http://phpgibadullina/lab-3/f6.html">Упр 3-6</a></li>
   <li><a href="http://phpgibadullina/lab-3/f7.php">Упр 3-7</a></li>
+  <p>Задача<p>
+  <li><a href="http://phpgibadullina/lab-3/s3-1.html">Задача 3.1</a></li>
+  </ul>
