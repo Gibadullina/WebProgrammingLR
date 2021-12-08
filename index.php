@@ -35,3 +35,9 @@
   <li><a href="http://phpgibadullina/lab-2/lab-2-5.php">Lab-2-5</a></li>
   <li><a href="http://phpgibadullina/lab-2/lab-2-6-1.php">Lab-2-6-1</a></li>    
   </ul>
+  <p>Лабораторная работа № 3<p> 
+  <ul>
+  <p>Часть 1<p>
+  <li><a href="http://phpgibadullina/lab-3/f1.html">Упр 3-1</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f2.html">Упр 3-2</a></li>
+  <li><a href="http://phpgibadullina/lab-3/lab-2-2.php">Lab-2-2</a></li>
