@@ -38,13 +38,18 @@
   <p>Лабораторная работа № 3<p> 
   <ul>
   <p>Упражнения<p>
-  <li><a href="http://phpgibadullina/lab-3/f1.html">Упр 3-1</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f2.html">Упр 3-2</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f3.html">Упр 3-3</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f4.html">Упр 3-4</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f5.html">Упр 3-5</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f6.html">Упр 3-6</a></li>
-  <li><a href="http://phpgibadullina/lab-3/f7.php">Упр 3-7</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f1.html">Упр 3-1</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f2.html">Упр 3-2</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f3.html">Упр 3-3</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f4.html">Упр 3-4</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f5.html">Упр 3-5</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f6.html">Упр 3-6</a></li>
+  <li><a href="http://phpgibadullina/lab-3/ex/f7.php">Упр 3-7</a></li>
   <p>Задача<p>
-  <li><a href="http://phpgibadullina/lab-3/s3-1.html">Задача 3.1</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-1.html">Задача 3.1</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-2.html">Задача 3.2</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-3.html">Задача 3.3</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-4.html">Задача 3.4</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-5.html">Задача 3.5</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-6.html">Задача 3.6</a></li>
   </ul>
