@@ -37,8 +37,11 @@
   </ul>
   <p>Лабораторная работа № 3<p> 
   <ul>
-  <p>Часть 1<p>
+  <p>Упражнения<p>
   <li><a href="http://phpgibadullina/lab-3/f1.html">Упр 3-1</a></li>
   <li><a href="http://phpgibadullina/lab-3/f2.html">Упр 3-2</a></li>
   <li><a href="http://phpgibadullina/lab-3/f3.html">Упр 3-3</a></li>
-  <li><a href="http://phpgibadullina/lab-3/lab-2-2.php">Lab-2-2</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f4.html">Упр 3-4</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f5.html">Упр 3-5</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f6.html">Упр 3-6</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f7.php">Упр 3-7</a></li>
