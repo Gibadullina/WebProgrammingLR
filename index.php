@@ -40,4 +40,5 @@
   <p>Часть 1<p>
   <li><a href="http://phpgibadullina/lab-3/f1.html">Упр 3-1</a></li>
   <li><a href="http://phpgibadullina/lab-3/f2.html">Упр 3-2</a></li>
+  <li><a href="http://phpgibadullina/lab-3/f3.html">Упр 3-3</a></li>
   <li><a href="http://phpgibadullina/lab-3/lab-2-2.php">Lab-2-2</a></li>
