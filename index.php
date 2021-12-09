@@ -50,6 +50,6 @@
   <li><a href="http://phpgibadullina/lab-3/task/s3-2.php">Задача 3.2</a></li>
   <li><a href="http://phpgibadullina/lab-3/task/s3-3.php">Задача 3.3</a></li>
   <li><a href="http://phpgibadullina/lab-3/task/s3-4.php">Задача 3.4</a></li>
-  <li><a href="http://phpgibadullina/lab-3/task/s3-5.html">Задача 3.5</a></li>
+  <li><a href="http://phpgibadullina/lab-3/task/s3-5.php">Задача 3.5</a></li>
   <li><a href="http://phpgibadullina/lab-3/task/s3-6.html">Задача 3.6</a></li>
   </ul>
