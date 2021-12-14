@@ -8,7 +8,7 @@ mysqli_select_db($con,'users') or die($connect_error);
 ?>
 <h2>Зарегистрированные пользователи:</h2>
 <table border="1">
-<tr> // вывод «шапки» таблицы
+<tr> <!--// вывод «шапки» таблицы-->
  <th> Имя </th> <th> E-mail </th>
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
