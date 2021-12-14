@@ -9,11 +9,10 @@ $con = new mysqli("localhost", "root", "", "users");
  $g3=$_GET['password'];
  $g4=$_GET['e_mail'];
  $g5=$_GET['info'];
- echo '$g6='.$_GET['id']."<br>";
   $zapros="UPDATE user SET user_name='".$g1.
 "', user_login='".$g2."', user_password='"
 .$g3."', user_e_mail='".$g4.
-"', user_info='".$g5."' WHERE id_user='1'";
+"', user_info='".$g5."' WHERE id_user='".$_GET['id']."'";
  mysqli_query($con,$zapros);
  printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
  if (mysqli_affected_rows($con)>0) {
