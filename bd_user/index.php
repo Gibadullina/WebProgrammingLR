@@ -17,9 +17,9 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
  echo "<tr>";
  echo "<td>" . $row['user_name'] . "</td>";
  echo "<td>" . $row['user_e_mail'] . "</td>";
- echo "<td><a href='edit.php?id=" . $row['id']
+ echo "<td><a href='edit.php?id=" . $row['id_user']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
- echo "<td><a href='delete.php?id=" . $row['id']
+ echo "<td><a href='delete.php?id=" . $row['id_user']
 . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
  echo "</tr>";
 }
