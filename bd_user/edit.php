@@ -4,14 +4,15 @@
 </head>
 <body>
 <?php
- $con=mysqli_connect("localhost","root","") or die ("Невозможно
-подключиться к серверу");
- mysqli_query($con, 'SET NAMES cp1251');
- mysqli_select_db($con,"users") or die("Нет такой таблицы!");
- $rows=mysqli_query($con,"SELECT user_name, user_login,
-user_password, user_e_mail, user_info FROM user WHERE
-id_user=".$_GET['id_user']);
- while ($st = mysql_fetch_array($rows)) {
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+ //$connect_error = 'Нет такой таблицы';
+ $con = new mysqli("localhost", "root", "", "users");
+//$con = mysqli_connect('localhost', 'root');
+ //mysqli_select_db($con,'users') or die($connect_error);
+ $id=$_GET['id_user'];
+ $zapr="SELECT user_name, user_login, user_password, user_e_mail, user_info FROM user WHERE id_user='".$_GET['id_user']."'";
+ $rows=mysqli_query($con,$zapr);
+ while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
  $id=$_GET['id_user'];
  $name = $st['user_name'];
  $login = $st['user_login'];
