@@ -43,14 +43,14 @@ mysqli_select_db($con,'games') or die($connect_error);
     <label for="tab_2">Ключи</label>
 	<input type="radio" name="inset" value="" id="tab_3">
     <label for="tab_3">Цифровые магазины</label>
-	
 	<div id="txt_1">
 <h2>Игры:
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Название </th> <th> Жанр </th>
-  <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
+ <th> Редактировать </th> <th> Уничтожить </th> <th>Экспорт</th></tr>
+ <!--<th></th>-->
 <?php
 $result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
@@ -64,6 +64,8 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
  echo "<td><a href='games/delete.php?id=" . $row['id_game']
 . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
+echo "<td><a href='export/xls.php?id=" . $row['id_game']
+. "'>XLS</a></td>"; // запуск скрипта для экспорта
  echo "</tr>";
 }
 print "</table>";
@@ -81,7 +83,7 @@ print("<P>Всего игр: $num_rows </p>");
   <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-/*$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['game_name'] . "</td>"; //название
@@ -97,7 +99,7 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
-print("<P>Всего игр: $num_rows </p>");*/
+print("<P>Всего игр: $num_rows </p>");
 ?>
 <p> <a href="keys/new.php"> Добавить ключ</a>
     </div>
@@ -110,7 +112,7 @@ print("<P>Всего игр: $num_rows </p>");*/
   <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-/*$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['game_name'] . "</td>"; //название
@@ -126,9 +128,10 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
-print("<P>Всего игр: $num_rows </p>");*/
+print("<P>Всего игр: $num_rows </p>");
 ?>
 <p> <a href="keys/new.php"> Добавить ключ</a>
 	 </div>
+	 	<p><a href="games/new.php"> Экспортировать общую таблицу XSL</a>
 </div>
-<p> <a href=".php"> Экспорт .xls</a>
+</body>
