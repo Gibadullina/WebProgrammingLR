@@ -1,6 +1,6 @@
 <html>
 <head
-<title> Редактирование данных о пользователе </title>
+<title> Редактирование данных об играх </title>
 </head>
 <body>
 <?php
@@ -8,8 +8,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  //$connect_error = 'Нет такой таблицы';
  $con = new mysqli("localhost", "root", "", "users");
 //$con = mysqli_connect('localhost', 'root');
- //mysqli_select_db($con,'users') or die($connect_error);
- $zapr="SELECT user_name, user_login, user_password, user_e_mail, user_info FROM user WHERE id_user='".$_GET['id']."'";
+ //mysqli_select_db($con,'games') or die($connect_error);
+ $zapr="SELECT game_name, user_login, user_password, user_e_mail, user_info FROM user WHERE id_game='".$_GET['id']."'";
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
   $id=$_GET['id'];
