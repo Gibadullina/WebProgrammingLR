@@ -130,6 +130,6 @@ print("<P>Всего игр: $num_rows </p>");
 ?>
 <p> <a href="keys/new.php"> Добавить ключ</a>
 	 </div>
-	 	<p><a href="games/new.php"> Экспортировать общую таблицу XLS</a>
+	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
 </div>
 </body>

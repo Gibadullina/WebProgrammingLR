@@ -4,34 +4,42 @@
 </head>
 <body>
 <?php
-
+$dataArray = array(
+ array(
+ '№ п/п',
+ 'Название',
+ 'Жанр',
+ 'Разработчик',
+ 'Издатель',
+ 'Цифровой ключ',
+ 'Дата приобретения',
+ 'Дата окончания',
+ 'URL магазина',
+ ),
+ array(
+ '',
+ '',
+ '',
+ '',
+ )
+);
 require_once('Classes/PHPExcel.php');
- if (isset($_GET["id"])) {
 	 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  //$connect_error = 'Нет такой таблицы';
  $con = new mysqli("localhost", "root", "", "games");
 //$con = mysqli_connect('localhost', 'root');
  //mysqli_select_db($con,'games') or die($connect_error);
- $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game WHERE id_game='".$_GET['id']."'";
+ $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";// WHERE id_game='1'";//".$_GET['id']."'";
+ //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
-  echo $st[1];
+  echo $st['game_name'];
+  $s=$st['game_name'];
  }
- }
-$dataArray = array(
- array(
- 'str1raw1',
- 'str',
- 'str1raw3',
- 'str1raw4',
- ),
- array(
- $st[5],
- 'str2raw2',
- 'str2raw3',
- 'str2raw4',
- )
-);
+
+
+
+//for ()
 
 // назва файла
 $filename = "Games.xlsx";
@@ -41,7 +49,16 @@ $doc = new PHPExcel();
 
 // установить лист
 $doc->setActiveSheetIndex(0);
+$sheet = $doc->getActiveSheet();
 
+$sheet->getColumnDimension("B")->setWidth(15);
+$sheet->getColumnDimension("C")->setWidth(15);
+$sheet->getColumnDimension("D")->setWidth(15);
+$sheet->getColumnDimension("E")->setWidth(15);
+$sheet->getColumnDimension("F")->setWidth(15);
+$sheet->getColumnDimension("I")->setWidth(15);
+$sheet->getColumnDimension("G")->setWidth(20);
+$sheet->getColumnDimension("H")->setWidth(15);
 // чтение данных в лист
 $doc->getActiveSheet()->fromArray($dataArray);
 
