@@ -97,7 +97,7 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
-print("<P>Всего игр: $num_rows </p>");
+print("<P>Всего ключей: $num_rows </p>");
 ?>
 <p> <a href="keys/new.php"> Добавить ключ</a>
     </div>
@@ -126,9 +126,9 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
-print("<P>Всего игр: $num_rows </p>");
+print("<P>Всего магазинов: $num_rows </p>");
 ?>
-<p> <a href="keys/new.php"> Добавить ключ</a>
+<p> <a href="keys/new.php"> Добавить магазин</a>
 	 </div>
 	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
 </div>

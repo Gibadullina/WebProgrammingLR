@@ -16,12 +16,7 @@ $dataArray = array(
  'Дата окончания',
  'URL магазина',
  ),
- array(
- '',
- '',
- '',
- '',
- )
+ 
 );
 require_once('Classes/PHPExcel.php');
 	 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -32,9 +27,14 @@ require_once('Classes/PHPExcel.php');
  $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";// WHERE id_game='1'";//".$_GET['id']."'";
  //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";
  $rows=mysqli_query($con,$zapr);
+ $i=1;
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
-  echo $st['game_name'];
-  $s=$st['game_name'];
+  $dataArray[$i][0]=$st["id_game"];
+  $dataArray[$i][1]=$st['game_name'];
+  $dataArray[$i][2]=$st['game_genre'];
+  $dataArray[$i][3]=$st['game_developer'];
+  $dataArray[$i][4]=$st['game_publisher'];
+  $i++;
  }
 
 
@@ -51,11 +51,11 @@ $doc = new PHPExcel();
 $doc->setActiveSheetIndex(0);
 $sheet = $doc->getActiveSheet();
 
-$sheet->getColumnDimension("B")->setWidth(15);
-$sheet->getColumnDimension("C")->setWidth(15);
-$sheet->getColumnDimension("D")->setWidth(15);
-$sheet->getColumnDimension("E")->setWidth(15);
-$sheet->getColumnDimension("F")->setWidth(15);
+$sheet->getColumnDimension("B")->setWidth(40);
+$sheet->getColumnDimension("C")->setWidth(40);
+$sheet->getColumnDimension("D")->setWidth(25);
+$sheet->getColumnDimension("E")->setWidth(25);
+$sheet->getColumnDimension("F")->setWidth(17);
 $sheet->getColumnDimension("I")->setWidth(15);
 $sheet->getColumnDimension("G")->setWidth(20);
 $sheet->getColumnDimension("H")->setWidth(15);

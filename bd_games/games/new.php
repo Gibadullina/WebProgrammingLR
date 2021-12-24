@@ -1,18 +1,17 @@
-<html>
-<head> <title> Добавление нового пользователя </title> </head>
+<p><html>
+<head> <title> Добавление новой игры </title> </head>
 <body>
-<H2>Регистрация на сайте:</H2>
+<H2>Внесение игры:</H2>
 <form action="save_new.php" metod="get">
- Имя: <input name="name" size="50" type="text">
-<br>Логин: <input name="login" size="20" type="text">
-<br>Пароль: <input name="password" size="20" type="password">
-<br>Е-mail: <input name="e_mail" size="30" type="text">
-<br>Информация: <textarea name="info" rows="4" cols="40">
-</textarea>
+ Название: <input name="name" size="50" type="text">
+<br>Жанр: <input name="genre" size="40" type="text">
+<br>Разработчик: <input name="developer" size="30" type="text">
+<br>Издатель: <input name="publisher" size="30" type="text">
+<br>Объем продаж (млн): <input name="sale" size="11" type="number">
 <p><input name="add" type="submit" value="Добавить">
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="index.php"> Вернуться к списку пользователей </a>
+<a href="../index.php"> Вернуться к списку игр </a>
 </body>
 </html>
