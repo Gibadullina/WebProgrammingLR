@@ -53,7 +53,7 @@ mysqli_select_db($con,'games') or die($connect_error);
  <th> Редактировать </th> <th> Уничтожить </th></tr>
  <!--<th></th>-->
 <?php
-$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о игр
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['game_name'] . "</td>"; //название
@@ -82,7 +82,7 @@ print("<P>Всего игр: $num_rows </p>");
   <th> Игра </th> <th> Цифровой магазин </th> <th> Стоимость </th> <th> Ключ </th> 
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM digital_key"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM digital_key"); // запрос на выборку сведений о ключах
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['purchase_date'] . "</td>"; //дата приобр
@@ -111,7 +111,7 @@ print("<P>Всего ключей: $num_rows </p>");
  <th> Название </th> <th> URL</th>
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($con,"SELECT id_store, store_name, store_url FROM store"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_store, store_name, store_url FROM store"); // запрос на выборку сведений о магаз
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['store_name'] . "</td>"; //название
