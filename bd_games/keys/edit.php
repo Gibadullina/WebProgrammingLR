@@ -25,12 +25,14 @@ print "Дата приобретения: <input name='purchase' size='50' type=
 value='".$purchase."'>";
 print "<br>Дата окончания: <input name='genre' size='50' type='date'
 value='".$genre."'>";
-print "<br>Разработчик: <input name='developer' size='50' type='text'
+print "<br>Игра: <input name='developer' size='50' type='text'
 value='".$developer."'>";
 print "<br>Издатель: <input name='publisher' size='50' type='text'
 value='".$publisher."'>";
-print "<br>Стоимость (млн): <input name='sale' size='11' type='number'
-value='".$sale."'>";
+print "<br>Стоимость: <input name='cost' size='11' type='number'
+value='".$cost."'>";
+print "<br>Цифровой ключ: <input name='dkey' size='20' type='text'
+value='".$dkey."'>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
 print "</form>";
@@ -39,3 +41,13 @@ print "<p><a href=\"..\index.php\"> Вернуться к списку
 ?>
 </body>
 </html>
+<P> Игра: <?php echo '<SELECT NAME="game" SIZE="1">';
+  for ($n=0;$n<$i;$n++){
+  echo '<OPTION VALUE="'.$idg[$n].'" SELECTED>'. $game[$n]; }
+ echo '</SELECT>';
+ ?>
+ <P> Магазин: <?php echo '<SELECT NAME="store" SIZE="1">';
+   for ($n=0;$n<$k;$n++){
+  echo '<OPTION VALUE="'.$ids[$n].'" SELECTED>'. $store[$n]; }
+  echo '</SELECT>';
+ ?>
