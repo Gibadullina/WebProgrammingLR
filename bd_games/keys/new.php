@@ -34,5 +34,3 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 <a href="../index.php"> Вернуться к списку игр </a>
 </body>
 </html>
-<!--$con = mysqli_connect('localhost', 'f0597918_users','bnsniMin');
-mysqli_select_db($con,'f0597918_users') or die($connect_error);-->
