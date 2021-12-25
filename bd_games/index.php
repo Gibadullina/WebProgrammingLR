@@ -40,9 +40,10 @@ mysqli_select_db($con,'games') or die($connect_error);
     <input type="radio" name="inset" value="" id="tab_1" checked>
     <label for="tab_1">Игры</label>
 	<input type="radio" name="inset" value="" id="tab_2">
-    <label for="tab_2">Ключи</label>
+    <label for="tab_2">Цифровые магазины</label>
 	<input type="radio" name="inset" value="" id="tab_3">
-    <label for="tab_3">Цифровые магазины</label>
+    <label for="tab_3">Ключи</label>
+
 	<div id="txt_1">
 <h2>Игры:
 <table border="1">
@@ -73,8 +74,8 @@ print("<P>Всего игр: $num_rows </p>");
 <p> <a href="games/new.php"> Добавить игру</a>
 </div>
 <!-- Вкладка с ключами______________________-->
- <div id="txt_2">
-        <h2>Ключи:
+ <div id="txt_3">
+        <h2> Цифровые ключи:
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Название </th> <th> Жанр </th>
@@ -99,10 +100,10 @@ print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего ключей: $num_rows </p>");
 ?>
-<p> <a href="keys/new.php"> Добавить ключ</a>
+<p> <a href="keys/new.php"> Добавить цифовые ключ</a>
     </div>
 	<!--Цифровые магазины========================================================-->
-	 <div id="txt_3">
+	 <div id="txt_2">
 	  <h2>Цифровые магазины:
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
