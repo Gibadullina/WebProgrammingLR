@@ -1,13 +1,10 @@
 <p><html>
-<head> <title> Добавление новой игры </title> </head>
+<head> <title> Добавление нового магазина </title> </head>
 <body>
-<H2>Внесение игры:</H2>
+<H2>Внесение сведений о цифровом магазине:</H2>
 <form action="save_new.php" metod="get">
  Название: <input name="name" size="50" type="text">
-<br>Жанр: <input name="genre" size="40" type="text">
-<br>Разработчик: <input name="developer" size="30" type="text">
-<br>Издатель: <input name="publisher" size="30" type="text">
-<br>Объем продаж (млн): <input name="sale" size="11" type="number">
+<br>URL: <input name="url" size="40" type="text">
 <p><input name="add" type="submit" value="Добавить">
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
