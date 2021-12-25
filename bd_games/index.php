@@ -42,7 +42,7 @@ mysqli_select_db($con,'games') or die($connect_error);
 	<input type="radio" name="inset" value="" id="tab_2">
     <label for="tab_2">Цифровые магазины</label>
 	<input type="radio" name="inset" value="" id="tab_3">
-    <label for="tab_3">Ключи</label>
+    <label for="tab_3">Цифровые ключи</label>
 
 	<div id="txt_1">
 <h2>Игры:
@@ -107,21 +107,17 @@ print("<P>Всего ключей: $num_rows </p>");
 	  <h2>Цифровые магазины:
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
- <th> Название </th> <th> Жанр </th>
-  <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
+ <th> Название </th> <th> URL</th>
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_store, store_name, store_url FROM store"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
- echo "<td>" . $row['game_name'] . "</td>"; //название
- echo "<td>" . $row['game_genre'] . "</td>";  //жанр
- echo "<td>" . $row['game_developer'] . "</td>"; //разраб
- echo "<td>" . $row['game_publisher'] . "</td>"; //издатель
- echo "<td>" . $row['game_sale'] . "</td>"; //прод
- echo "<td><a href='keys/edit.php?id=" . $row['id_game']
+ echo "<td>" . $row['store_name'] . "</td>"; //название
+ echo "<td>" . $row['store_url'] . "</td>";  //url
+ echo "<td><a href='stores/edit.php?id=" . $row['id_store']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
- echo "<td><a href='keys/delete.php?id=" . $row['id_game']
+ echo "<td><a href='stores/delete.php?id=" . $row['id_store']
 . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
  echo "</tr>";
 }
