@@ -9,7 +9,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $con = new mysqli("localhost", "root", "", "games");
 //$con = mysqli_connect('localhost', 'root');
  //mysqli_select_db($con,'games') or die($connect_error);
- $zapr="SELECT `purchase_date`, expiration_date, game, store, key_cost,digital_key FROM digital_key WHERE id_digital_key='".$_GET['id']."'";
+ $zapr="SELECT purchase_date, expiration_date, game, store, key_cost,digital_key FROM digital_key WHERE id_digital_key='".$_GET['id']."'";
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
   $id=$_GET['id'];
