@@ -6,10 +6,10 @@ $con = new mysqli("localhost", "root", "", "games");
  //mysqli_select_db($con,"users") or die("Нет такой таблицы!");
  
  $g5=$_GET['sale'];
-  $zapros="UPDATE game SET game_name='".$g1.
-"', game_genre='".$g2."', game_developer='"
-.$g3."', game_publisher='".$g4.
-"', game_sale='".$g5."' WHERE id_game='".$_GET['id']."'";
+  $zapros="UPDATE key SET purchase_date='".$_GET['purchase'].
+"', expiration_date='".$_GET['expiration']."', game='"
+.$_GET['game']."', store='".$_GET['store'].
+"', key_cost='".$_GET['cost']."', digital_key='".$_GET['dkey']."' WHERE id_digital_key='".$_GET['id']."'";
  mysqli_query($con,$zapros);
  //printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
  if (mysqli_affected_rows($con)>0) {

@@ -13,22 +13,23 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
   $id=$_GET['id'];
- $name = $st['game_name'];
- $genre = $st['game_genre'];
- $developer = $st['game_developer'];
- $publisher = $st['game_publisher'];
- $sale = $st['game_sale'];
+  $purchase=$st['purchase_date'];
+  $expiration=$st['expiration_date'];
+  $game=$st['game'];
+  $store=$st['store'];
+  $cost=$st['key_cost'];
+  $dkey=$st['digital_key'];
  }
 print "<form action='save_edit.php' metod='get'>";
-print "Название: <input name='name' size='50' type='text'
-value='".$name."'>";
-print "<br>Жанр: <input name='genre' size='40' type='text'
+print "Дата приобретения: <input name='purchase' size='50' type='date'
+value='".$purchase."'>";
+print "<br>Дата окончания: <input name='genre' size='50' type='date'
 value='".$genre."'>";
-print "<br>Разработчик: <input name='developer' size='30' type='text'
+print "<br>Разработчик: <input name='developer' size='50' type='text'
 value='".$developer."'>";
-print "<br>Издатель: <input name='publisher' size='30' type='text'
+print "<br>Издатель: <input name='publisher' size='50' type='text'
 value='".$publisher."'>";
-print "<br>Объем продаж (млн): <input name='sale' size='11' type='number'
+print "<br>Стоимость (млн): <input name='sale' size='11' type='number'
 value='".$sale."'>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
