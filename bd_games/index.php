@@ -91,7 +91,6 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
   echo "<td>" . $row['game_publisher'] . "</td>"; //магазин
    echo "<td>" . $row['game_publisher'] . "</td>"; //стоимость
  echo "<td>" . $row['game_publisher'] . "</td>"; //ключ
- echo "<td>" . $row['game_sale'] . "</td>"; //прод
  echo "<td><a href='keys/edit.php?id=" . $row['id_game']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
  echo "<td><a href='keys/delete.php?id=" . $row['id_game']
