@@ -4,10 +4,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $con = new mysqli("localhost", "root", "", "games");
  //$con=mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");
  //mysqli_select_db($con,"users") or die("Нет такой таблицы!");
- $g1=$_GET['name'];
- $g2=$_GET['genre'];
- $g3=$_GET['developer'];
- $g4=$_GET['publisher'];
+ 
  $g5=$_GET['sale'];
   $zapros="UPDATE game SET game_name='".$g1.
 "', game_genre='".$g2."', game_developer='"
