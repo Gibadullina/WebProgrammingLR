@@ -14,7 +14,7 @@ $con = new mysqli("localhost", "root", "", "users");
 .$g3."', user_e_mail='".$g4.
 "', user_info='".$g5."' WHERE id_user='".$_GET['id']."'";
  mysqli_query($con,$zapros);
- printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
+ //printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
  if (mysqli_affected_rows($con)>0) {
  echo 'Все сохранено. <a href="index.php"> Вернуться к списку
 пользователей </a>'; }
