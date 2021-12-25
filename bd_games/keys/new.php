@@ -7,9 +7,16 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $zapr="SELECT  id_game, game_name,store_name, id_store FROM game, store";
  $rows=mysqli_query($con,$zapr);
  $i=0;
- $k=0;
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
-  
+	$idg[$i]=$st['id_game'];
+	$game[$i]=$st['game_name'];
+ $i++;
+ }
+ $i=0;
+ while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
+	$ids[$i]=$st[' id_store'];
+	$store[$i]=$st['store_name'];
+ $i++;
  }
  ?>
 <p><html>
@@ -21,8 +28,9 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 <br>Дата окончания: <input name="expiration" size="40" type="date">
 <P> Игра: <?php echo '<SELECT NAME="game" SIZE="1">';
   for ($n=0;$n<=$i;$n++){
- echo '<OPTION VALUE="'.$idg[$i].'" SELECTED>'. $name; 
-
+  echo '<OPTION VALUE="'.$idg[$n].'" SELECTED>'. $game[$n]; }
+  for ($n=0;$n<=$i;$n++){
+  echo '<OPTION VALUE="'.$ids[$n].'" SELECTED>'. $store[$n]; }
  echo '</SELECT>';
  ?>
  <br>Стоимость: <input name="cost" size="11" type="number">
@@ -31,6 +39,6 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="../index.php"> Вернуться к списку игр </a>
+<a href="../index.php"> Вернуться к списку</a>
 </body>
 </html>
