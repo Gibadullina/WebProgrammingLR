@@ -9,6 +9,6 @@
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="../index.php"> Вернуться к списку игр </a>
+<a href="../index.php"> Вернуться к таблицам </a>
 </body>
 </html>
