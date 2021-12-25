@@ -86,11 +86,11 @@ $result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['purchase_date'] . "</td>"; //дата приобр
- echo "<td>" . $row['expiration_date'] . "</td>";  //дата окночания
+ echo "<td>" . $row['expiration_date'] . "</td>";  //дата оконнчания
  echo "<td>" . $row['game'] . "</td>"; //игра
-  echo "<td>" . $row['game_publisher'] . "</td>"; //магазин
-   echo "<td>" . $row['game_publisher'] . "</td>"; //стоимость
- echo "<td>" . $row['game_publisher'] . "</td>"; //ключ
+  echo "<td>" . $row['store'] . "</td>"; //магазин
+   echo "<td>" . $row['key_cost'] . "</td>"; //стоимость
+ echo "<td>" . $row['digital_key'] . "</td>"; //ключ
  echo "<td><a href='keys/edit.php?id=" . $row['id_game']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
  echo "<td><a href='keys/delete.php?id=" . $row['id_game']
