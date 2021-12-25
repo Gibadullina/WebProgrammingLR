@@ -24,7 +24,10 @@ require_once('Classes/PHPExcel.php');
  $con = new mysqli("localhost", "root", "", "games");
 //$con = mysqli_connect('localhost', 'root');
  //mysqli_select_db($con,'games') or die($connect_error);
- $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";// WHERE id_game='1'";//".$_GET['id']."'";
+
+ //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher,digital_key FROM game, key ";// WHERE id_game='1'";//".$_GET['id']."'";
+ $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher,
+ digital_key,purchase_date,expiration_date,store_url FROM game_info,digital_key,store WHERE digital_key.game=game_info.id_game AND digital_key.store=store.id_store ";
  //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";
  $rows=mysqli_query($con,$zapr);
  $i=1;
@@ -34,6 +37,10 @@ require_once('Classes/PHPExcel.php');
   $dataArray[$i][2]=$st['game_genre'];
   $dataArray[$i][3]=$st['game_developer'];
   $dataArray[$i][4]=$st['game_publisher'];
+  $dataArray[$i][5]=$st['digital_key'];
+  $dataArray[$i][6]=$st['purchase_date'];
+  $dataArray[$i][7]=$st['expiration_date'];
+  $dataArray[$i][8]=$st['store_url'];
   $i++;
  }
   
@@ -56,7 +63,7 @@ $sheet->getColumnDimension("C")->setWidth(40);
 $sheet->getColumnDimension("D")->setWidth(25);
 $sheet->getColumnDimension("E")->setWidth(25);
 $sheet->getColumnDimension("F")->setWidth(17);
-$sheet->getColumnDimension("I")->setWidth(15);
+$sheet->getColumnDimension("I")->setWidth(40);
 $sheet->getColumnDimension("G")->setWidth(20);
 $sheet->getColumnDimension("H")->setWidth(15);
 // чтение данных в лист

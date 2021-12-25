@@ -78,17 +78,19 @@ print("<P>Всего игр: $num_rows </p>");
         <h2> Цифровые ключи:
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
- <th> Название </th> <th> Жанр </th>
-  <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
+ <th> Дата приобретения</th> <th> Дата окончания </th>
+  <th> Игра </th> <th> Цифровой магазин </th> <th> Стоимость </th> <th> Ключ </th> 
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM digital_key"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
- echo "<td>" . $row['game_name'] . "</td>"; //название
- echo "<td>" . $row['game_genre'] . "</td>";  //жанр
- echo "<td>" . $row['game_developer'] . "</td>"; //разраб
- echo "<td>" . $row['game_publisher'] . "</td>"; //издатель
+ echo "<td>" . $row['purchase_date'] . "</td>"; //дата приобр
+ echo "<td>" . $row['expiration_date'] . "</td>";  //дата окночания
+ echo "<td>" . $row['game'] . "</td>"; //игра
+  echo "<td>" . $row['game_publisher'] . "</td>"; //магазин
+   echo "<td>" . $row['game_publisher'] . "</td>"; //стоимость
+ echo "<td>" . $row['game_publisher'] . "</td>"; //ключ
  echo "<td>" . $row['game_sale'] . "</td>"; //прод
  echo "<td><a href='keys/edit.php?id=" . $row['id_game']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
@@ -125,7 +127,7 @@ print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего магазинов: $num_rows </p>");
 ?>
-<p> <a href="keys/new.php"> Добавить магазин</a>
+<p> <a href="stores/new.php"> Добавить магазин</a>
 	 </div>
 	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
 </div>
