@@ -32,7 +32,7 @@ require_once('Classes/PHPExcel.php');
  $rows=mysqli_query($con,$zapr);
  $i=1;
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
-  $dataArray[$i][0]=$st["id_game"];
+  $dataArray[$i][0]=$i;
   $dataArray[$i][1]=$st['game_name'];
   $dataArray[$i][2]=$st['game_genre'];
   $dataArray[$i][3]=$st['game_developer'];
