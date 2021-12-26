@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=	, initial-scale=1.0">
-	<title>Сайт Таблички</title>
+	<title>Сайт "Игры"</title>
 </head>
 <body><style  type="text/css">
    h1 { 

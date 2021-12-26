@@ -29,6 +29,16 @@
 #tab_2:checked ~ #txt_2,
 #tab_3:checked ~ #txt_3,
 #tab_4:checked ~ #txt_4 { display: block; }
+h3 { 
+    font-size: 120%; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    color:#ed0e02;
+   }
+ h4 { 
+    font-size: 120%; 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    color: #8df7eb;
+   }  
 </style></head>
 <body>
 <?php
@@ -37,16 +47,21 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $connect_error = 'Нет такой БД';
 $con = mysqli_connect('localhost', 'root');
 mysqli_select_db($con,'games') or die($connect_error);
+ if ($_SESSION['type'] == 2) {
+	 print "<h3>Администатор</h3>";
+ } else { print "<h4>Пользователь</h4>";}
 ?>
-<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
 <div class="tabs">
     <input type="radio" name="inset" value="" id="tab_1" checked>
     <label for="tab_1">Игры</label>
 	<input type="radio" name="inset" value="" id="tab_2">
     <label for="tab_2">Цифровые магазины</label>
 	<input type="radio" name="inset" value="" id="tab_3">
-    <label for="tab_3">Цифровые ключи</label>
-
+    <label for="tab_3">Цифровые ключи</label>  
+	<?php if ($_SESSION['type'] == 2) {
+	print '<input type="radio" name="inset" value="" id="tab_4">';
+    print'<label for="tab_4">Аккаунты</label>'; 
+	} ?>
 	<div id="txt_1">
 <h2>Игры:
 <table border="1">
@@ -112,7 +127,10 @@ print("<P>Всего ключей: $num_rows </p>");
 <table border="1">
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Название </th> <th> URL</th>
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Редактировать </th> 
+ <!--#if expr="($_SESSION['type'] == 2)"-->
+ <th> Уничтожить </th>  <!--endif-->
+ </tr>
 <?php
 $result=mysqli_query($con,"SELECT id_store, store_name, store_url FROM store"); // запрос на выборку сведений о магаз
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
@@ -128,11 +146,12 @@ if ($_SESSION['type'] == 2) {
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
-print("<P>Всего магазинов: $num_rows </p>");
+print("<P>Всего магазинов: $num_rows </p>");      
 ?>
 <p> <a href="stores/new.php"> Добавить магазин</a>
 	 </div>
 	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
 		<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
+		<p><a href="export/pdf.php"> Редактировать свои данные</a>
 </div>
 </body>
