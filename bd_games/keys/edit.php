@@ -25,13 +25,11 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $rows2=mysqli_query($con,$zapr2);
  $i=0; 
  while ($st2 = mysqli_fetch_array($rows2,MYSQLI_BOTH)) {
-	 /*if ($st2['id_game']=$game) {
-		 $gname=$st2['game_name'];
-	 }else{*/
 	$idg[$i]=$st2['id_game'];
-	$game[$i]=$st2['game_name'];//}
+	$gname[$i]=$st2['game_name'];
+	echo $st2['game_name']."<br>";
  $i++;
- } echo $game[1];
+ } for ($f=0;$f<(count($game));$f++)echo $gname[$i]."<br>";
  $k=0; 
  $zapr1="SELECT  id_store,store_name  FROM store";
  $rows1=mysqli_query($con,$zapr1);
@@ -48,15 +46,13 @@ print "<form action='save_edit.php' metod='get'>";
 print "Дата приобретения: <input name='purchase' size='50' type='date'
 value='".$purchase."'>";
 print "<br>Дата окончания: <input name='genre' size='50' type='date'
-value='".$genre."'>";
+value='".$expiration."'>";
 //combobox game--------------------------
 print '<br>Игра:  <SELECT NAME="game" style="width: 200px;">';
-  print '<OPTION VALUE="'.$idg[0].'" SELECTED>'. $gname; 
+  print '<OPTION VALUE="'.$idg[0].'" SELECTED>'. $gname[1]; 
 // print '<OPTION VALUE="'.$idg[2].'" >'.$game[1]; 
  print '</SELECT>';
-print "<br>Игра: <input name='developer' size='50' type='text'
-value='".$developer."'>";
-//cjv,o,ox store---------------
+//combobox store---------------
 print "<br>Издатель: <input name='publisher' size='50' type='text'
 value='".$publisher."'>";
 //-----------------------------------------
