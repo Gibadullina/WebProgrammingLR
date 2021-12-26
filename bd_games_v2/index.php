@@ -32,12 +32,13 @@
 </style></head>
 <body>
 <?php
-//include ("checkSession.php");
+include ("checkSession.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $connect_error = 'Нет такой БД';
 $con = mysqli_connect('localhost', 'root');
 mysqli_select_db($con,'games') or die($connect_error);
 ?>
+<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
 <div class="tabs">
     <input type="radio" name="inset" value="" id="tab_1" checked>
     <label for="tab_1">Игры</label>
@@ -120,8 +121,9 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
  echo "<td>" . $row['store_url'] . "</td>";  //url
  echo "<td><a href='stores/edit.php?id=" . $row['id_store']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
+if ($_SESSION['type'] == 2) {
  echo "<td><a href='stores/delete.php?id=" . $row['id_store']
-. "'>Удалить</a></td>"; // запуск скрипта для удаления записи
+. "'>Удалить</a></td>";} // запуск скрипта для удаления записи
  echo "</tr>";
 }
 print "</table>";
