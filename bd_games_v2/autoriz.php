@@ -38,7 +38,6 @@
 		$passwordBD = $data['password'];
 		$typeBD = $data['type'];
 		$idUserBD = $data['id_users'];
-		echo md5($password);
 			if ($username === $usernameBD and md5($password) === $passwordBD) {
 				$idCome = true;
 				session_start();
