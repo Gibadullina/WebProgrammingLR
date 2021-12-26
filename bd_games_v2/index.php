@@ -166,15 +166,15 @@ print	'</div>';
  <th> Редактировать </th> <th> Уничтожить </th></tr>
  <!--<th></th>-->
 <?php
-$result=mysqli_query($con,"SELECT username, password, type FROM users"); // запрос на выборку сведений о пользователях
+$result=mysqli_query($con,"SELECT id_users,username, password, type FROM users"); // запрос на выборку сведений о пользователях
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['username'] . "</td>"; //логин
  echo "<td>" . $row['password']. "</td>";  //пароль
  echo "<td>" . $row['type'] . "</td>"; //тип
- echo "<td><a href='users/edit.php?id=" . $row['id_game']
+ echo "<td><a href='users/edit.php?id=" . $row['id_users']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
- echo "<td><a href='users/delete.php?id=" . $row['id_game']
+ echo "<td><a href='users/delete.php?id=" . $row['id_users']
 . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
  echo "</tr>";
 }

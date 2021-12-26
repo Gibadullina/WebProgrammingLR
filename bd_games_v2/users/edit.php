@@ -10,12 +10,12 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $con = new mysqli("localhost", "root", "", "games");
 //$con = mysqli_connect('localhost', 'root');
  //mysqli_select_db($con,'games') or die($connect_error);
- $zapr="SELECT username, password, type FROM users WHERE id_users='".$_SESSION['id_user']."'";
+ $zapr="SELECT username, password, type FROM users WHERE id_users='".$_GET['id']."'";
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
-  $id=$_SESSION['id_user'];
+  $id=$_GET['id'];
  $name = $st['username'];
- $password = $st[' password'];
+ $password = $st['password'];
  $type = $st['type'];
  }
 print "<form action='save_edit.php' metod='get'>";
