@@ -18,7 +18,8 @@ $dataArray = array(
  ),
  
 );
-require_once('Classes/PHPExcel.php');
+include ("checkSession.php");
+require_once('export/Classes/PHPExcel.php');
 	 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  //$connect_error = 'Нет такой таблицы';
  $con = new mysqli("localhost", "root", "", "games");

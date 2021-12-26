@@ -14,9 +14,9 @@ $con = new mysqli("localhost", "root", "", "games");
  mysqli_query($con,$zapros);
  //printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
  if (mysqli_affected_rows($con)>0) {
- echo 'Все сохранено. <a href="../index.php"> Вернуться к списку
+ echo 'Все сохранено. <a href="index.php"> Вернуться к списку
 игр </a>'; }
- else { echo 'Ошибка сохранения. <a href="../index.php">
+ else { echo 'Ошибка сохранения. <a href="index.php">
 Вернуться к списку игр</a> '; }
 ?>
 </body> </html>

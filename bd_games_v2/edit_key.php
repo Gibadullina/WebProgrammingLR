@@ -41,7 +41,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  }
   $counts=$k;
  //echo  $gname;
-print "<form action='save_edit.php' metod='get'>";
+print "<form action='save_edit_key.php' metod='get'>";
 print "Дата приобретения: <input name='purchase' size='50' type='date'
 value='".$purchase."'>";
 print "<br>Дата окончания: <input name='genre' size='50' type='date'
@@ -65,7 +65,7 @@ value='".$dkey."'>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
 print "</form>";
-print "<p><a href=\"..\index.php\"> Вернуться к спискам</a>";
+print "<p><a href=\"index.php\"> Вернуться к спискам</a>";
 ?>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php 
-	require_once('tcpdf_min/tcpdf.php');
+include ("checkSession.php");
+	require_once('export/tcpdf_min/tcpdf.php');
 	ob_clean();
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

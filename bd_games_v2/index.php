@@ -83,10 +83,10 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
  echo "<td>" . $row['game_developer'] . "</td>"; //разраб
  echo "<td>" . $row['game_publisher'] . "</td>"; //издатель
  echo "<td>" . $row['game_sale'] . "</td>"; //прод
- echo "<td><a href='games/edit.php?id=" . $row['id_game']
+ echo "<td><a href='edit_game.php?id=" . $row['id_game']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 if ($_SESSION['type'] == 2) {
- echo "<td><a href='games/delete.php?id=" . $row['id_game']
+ echo "<td><a href='delete_game.php?id=" . $row['id_game']
 . "'>Удалить</a></td>"; }// запуск скрипта для удаления записи
  echo "</tr>";
 }
@@ -94,7 +94,7 @@ print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего игр: $num_rows </p>");
 ?>
-<p> <a href="games/new.php"> Добавить игру</a>
+<p> <a href="new_game.php"> Добавить игру</a>
 </div>
 <!-- Вкладка с ключами______________________-->
  <div id="txt_3">
@@ -116,10 +116,10 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
   echo "<td>" . $row['store'] . "</td>"; //магазин
    echo "<td>" . $row['key_cost'] . "</td>"; //стоимость
  echo "<td>" . $row['digital_key'] . "</td>"; //ключ
- echo "<td><a href='keys/edit.php?id=" . $row['id_digital_key']
+ echo "<td><a href='edit_key.php?id=" . $row['id_digital_key']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 if ($_SESSION['type'] == 2) {
- echo "<td><a href='keys/delete.php?id=" . $row['id_digital_key']
+ echo "<td><a href='delete_key.php?id=" . $row['id_digital_key']
 . "'>Удалить</a></td>"; }// запуск скрипта для удаления записи
  echo "</tr>";
 }
@@ -127,7 +127,7 @@ print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего ключей: $num_rows </p>");
 ?>
-<p> <a href="keys/new.php"> Добавить цифовые ключ</a>
+<p> <a href="new_key.php"> Добавить цифовые ключ</a>
     </div>
 	<!--Цифровые магазины========================================================-->
 	 <div id="txt_2">
@@ -146,17 +146,17 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
  echo "<tr>";
  echo "<td>" . $row['store_name'] . "</td>"; //название
  echo "<td>" . $row['store_url'] . "</td>";  //url
- echo "<td><a href='stores/edit.php?id=" . $row['id_store']
+ echo "<td><a href='edit_store.php?id=" . $row['id_store']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
 if ($_SESSION['type'] == 2) {
- echo "<td><a href='stores/delete.php?id=" . $row['id_store']
+ echo "<td><a href='delete_store.php?id=" . $row['id_store']
 . "'>Удалить</a></td>";} // запуск скрипта для удаления записи
  echo "</tr>";
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего магазинов: $num_rows </p>");      
-print '<p> <a href="stores/new.php"> Добавить магазин</a>';
+print '<p> <a href="new_store.php"> Добавить магазин</a>';
 print	'</div>';
 ?>	 
 	 	<div id="txt_4">
@@ -174,24 +174,24 @@ while ($row=mysqli_fetch_array($result)){// для каждой строки и�
  echo "<td>" . $row['username'] . "</td>"; //логин
  echo "<td>" . $row['password']. "</td>";  //пароль
  echo "<td>" . $row['type'] . "</td>"; //тип
- echo "<td><a href='users/edit.php?id=" . $row['id_users']
+ echo "<td><a href='edit_user.php?id=" . $row['id_users']
 . "'>Редактировать</a></td>"; // запуск скрипта для редактирования
- echo "<td><a href='users/delete.php?id=" . $row['id_users']
+ echo "<td><a href='delete_user.php?id=" . $row['id_users']
 . "'>Удалить</a></td>"; // запуск скрипта для удаления записи
  echo "</tr>";
 }
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего пользователей: $num_rows </p>");
-print'<p> <a href="games/new.php"> Добавить пользователя</a>';
+print'<p> <a href="new_user.php"> Добавить пользователя</a>';
 ?>
 </div>
-	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
-		<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
+	 	<p><a href="xls.php"> Экспортировать общую таблицу XLS</a>
+		<p><a href="pdf.php"> Экспортировать общую таблицу PDF</a>
 	<?php 
 	if ($_SESSION['type'] == 1) {
 		echo $_SESSION['id_user'];
-	echo "<br><a href='users/edit.php?id=" . $_SESSION['id_users']
+	echo "<br><a href='edit_user.php?id=" . $_SESSION['id_users']
 . "'>Редактировать свои данные</a></br>";}
 	?>
 </div>

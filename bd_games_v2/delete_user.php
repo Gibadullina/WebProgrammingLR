@@ -6,6 +6,6 @@ $con = mysqli_connect('localhost', 'root','','games');
  mysqli_query($con,$zapros);
  $zapros="DELETE FROM d_key WHERE store='" . $_GET['id']."'";
  mysqli_query($con,$zapros);
- header("Location: ../index.php");
+ header("Location: index.php");
  exit;
 ?>

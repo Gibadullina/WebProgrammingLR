@@ -1,5 +1,6 @@
 <html> <body>
 <?php
+include ("checkSession.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $con = new mysqli("localhost", "root", "", "games");
  //$con=mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");
@@ -16,9 +17,9 @@ $con = new mysqli("localhost", "root", "", "games");
  mysqli_query($con,$zapros);
  //printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
  if (mysqli_affected_rows($con)>0) {
- echo 'Все сохранено. <a href="../index.php"> Вернуться к списку
+ echo 'Все сохранено. <a href="index.php"> Вернуться к списку
 игр </a>'; }
- else { echo 'Ошибка сохранения. <a href="../index.php">
+ else { echo 'Ошибка сохранения. <a href="index.php">
 Вернуться к списку игр</a> '; }
 ?>
 </body> </html>

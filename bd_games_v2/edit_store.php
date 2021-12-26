@@ -17,7 +17,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $name = $st['store_name'];
  $url = $st['store_url'];
  }
-print "<form action='save_edit.php' metod='get'>";
+print "<form action='save_edit_store.php' metod='get'>";
 print "Название: <input name='name' size='50' type='text'
 value='".$name."'>";
 print "<br>URL: <input name='url' size='40' type='text'
@@ -25,7 +25,7 @@ value='".$url."'>";
 print "<input type='hidden' name='id' value='".$id."'> <br>";
 print "<input type='submit' name='' value='Сохранить'>";
 print "</form>";
-print "<p><a href=\"..\index.php\"> Вернуться к спискам </a>";
+print "<p><a href=\"index.php\"> Вернуться к спискам </a>";
 ?>
 </body>
 </html>

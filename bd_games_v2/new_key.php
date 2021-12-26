@@ -25,7 +25,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 <head> <title> Добавление нового ключа </title> </head>
 <body>
 <H2>Внесение ключа:</H2>
-<form action="save_new.php" metod="get">
+<form action="save_new_key.php" metod="get">
  Дата приобретения: <input name="purchase" size="50" type="date">
 <br>Дата окончания: <input name="expiration" size="40" type="date">
 <P> Игра: <?php echo '<SELECT NAME="game" SIZE="1">';
@@ -44,6 +44,6 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 <input name="b2" type="reset" value="Очистить"></p>
 </form>
 <p>
-<a href="../index.php"> Вернуться к списку</a>
+<a href="index.php"> Вернуться к списку</a>
 </body>
 </html>
