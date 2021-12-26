@@ -32,6 +32,7 @@
 </style></head>
 <body>
 <?php
+include ("checkSession.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $connect_error = 'Нет такой БД';
 $con = mysqli_connect('localhost', 'root');
