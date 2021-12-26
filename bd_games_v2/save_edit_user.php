@@ -18,7 +18,7 @@ $con = new mysqli("localhost", "root", "", "games");
 		 }
 	 }
 	 if (!$check) {
-		 if ($_GET['password1']=$_GET['password2']) {
+		 if ($_GET['password1']===$_GET['password2']) {
 	 $con->query($zapros);
 	 if (mysqli_affected_rows($con)>0) {
 	 echo 'Все сохранено. <a href="index.php"> Вернуться к списку
