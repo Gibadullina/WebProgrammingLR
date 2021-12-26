@@ -130,5 +130,6 @@ print("<P>Всего магазинов: $num_rows </p>");
 <p> <a href="stores/new.php"> Добавить магазин</a>
 	 </div>
 	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
+		<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
 </div>
 </body>
