@@ -37,13 +37,13 @@
 		$usernameBD = $data['username'];
 		$passwordBD = $data['password'];
 		$typeBD = $data['type'];
-		$idUserBD = $data['id_user'];
+		$idUserBD = $data['id_users'];
 		echo md5($password);
 			if ($username === $usernameBD and md5($password) === $passwordBD) {
 				$idCome = true;
 				session_start();
 				$_SESSION['type'] = $typeBD;
-				$_SESSION['id_user'] = $idUserBD;
+				$_SESSION['id_users'] = $idUserBD;
 				break;
 			} else {
 				$idCome = false;

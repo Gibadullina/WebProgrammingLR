@@ -1,31 +1,25 @@
 <html> <body>
 <?php
-include ("../checkSession.php");
+$connect_error = 'Нет такой таблицы';
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $con = new mysqli("localhost", "root", "", "games");
  //$con=mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");
  //mysqli_select_db($con,"users") or die("Нет такой таблицы!");
-  $zapros="UPDATE users SET username='".$_GET['name'].
-	"', password='" .md5($_GET['password1'])."', type='".$_GET['type'].
-	"' WHERE id_users=" .$_GET['id'];
-	$users=$mysqli->query("SELECT id_user, username, password, type FROM users");
-	 $check = false;
-	  while ($st = mysqli_fetch_array($users)) {
-		 if ($st['username'] == $_GET['name']) {
-		 	print "<p>Такой пользователь уже зарегестрирован.";
-	 		print "<p><a href=\"index.php\"> Вернуться к списку пользователей </a>";
-	 		$check = true;
-		 }
-	 }
-	 if (!$check) {
-		 if ($_GET['password1']=$_GET['password2']) {
-	 $mysqli->query($zapros);
-	 if (mysqli_affected_rows($mysqli)>0) {
-	 echo 'Все сохранено. <a href="index.php"> Вернуться к списку
-	пользователей </a>'; }
-	 else { echo 'Ошибка сохранения. <a href="index.php">
-	Вернуться к списку пользователей</a> '; }	 
-	 }} else { echo 'Ошибка сохранения. Пароли не совпадают <a href="index.php">
-	Вернуться к списку пользователей</a> '; } 
+ $g1=$_GET['name'];
+ $g2=$_GET['genre'];
+ $g3=$_GET['developer'];
+ $g4=$_GET['publisher'];
+ $g5=$_GET['sale'];
+  $zapros="UPDATE game SET game_name='".$g1.
+"', game_genre='".$g2."', game_developer='"
+.$g3."', game_publisher='".$g4.
+"', game_sale='".$g5."' WHERE id_game='".$_GET['id']."'";
+ mysqli_query($con,$zapros);
+ //printf("Затронутые строки (UPDATE): %d\n", mysqli_affected_rows($con));
+ if (mysqli_affected_rows($con)>0) {
+ echo 'Все сохранено. <a href="../index.php"> Вернуться к списку
+игр </a>'; }
+ else { echo 'Ошибка сохранения. <a href="../index.php">
+Вернуться к списку игр</a> '; }
 ?>
 </body> </html>

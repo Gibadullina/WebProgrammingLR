@@ -1,3 +1,4 @@
+<?php include ("checkSession.php"); ?>
 <p><html>
 <head> <title> Добавление нового магазина </title> </head>
 <body>

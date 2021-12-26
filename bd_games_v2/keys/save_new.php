@@ -1,4 +1,5 @@
 <?php
+include ("checkSession.php");
  // Подключение к базе данных:
 $connect_error = 'Нет такой таблицы';
 $con = mysqli_connect('localhost', 'root');

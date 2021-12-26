@@ -1,5 +1,6 @@
 <html> <body>
 <?php
+include ("checkSession.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $con = new mysqli("localhost", "root", "", "games");
  //$con=mysqli_connect("localhost","root","") or die ("Невозможно подключиться к серверу");

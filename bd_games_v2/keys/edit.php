@@ -3,7 +3,8 @@
 <title> Редактирование данных о ключах </title>
 </head>
 <body>
-<?php
+<?php 
+include ("checkSession.php");
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  //$connect_error = 'Нет такой таблицы';
  $con = new mysqli("localhost", "root", "", "games");
