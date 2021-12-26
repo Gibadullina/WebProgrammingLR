@@ -68,7 +68,11 @@ mysqli_select_db($con,'games') or die($connect_error);
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Название </th> <th> Жанр </th>
  <th> Разработчик </th> <th> Издатель </th> <th> Объем продаж </th> 
- <th> Редактировать </th> <th> Уничтожить </th></tr>
+ <th> Редактировать </th> 
+ <?php  
+   if ($_SESSION['type'] == 2) print '<th>Уничтожить </th>'; 
+   ?>
+ </tr>
  <!--<th></th>-->
 <?php
 $result=mysqli_query($con,"SELECT id_game, game_name, game_genre, game_developer, game_publisher,game_sale FROM game"); // запрос на выборку сведений о игр
@@ -98,7 +102,9 @@ print("<P>Всего игр: $num_rows </p>");
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Дата приобретения</th> <th> Дата окончания </th>
   <th> Игра </th> <th> Цифровой магазин </th> <th> Стоимость </th> <th> Ключ </th> 
- <th> Редактировать </th> <th> Уничтожить </th> </tr>
+ <th> Редактировать </th>  <?php  
+   if ($_SESSION['type'] == 2) print '<th>Уничтожить </th>'; 
+   ?></tr>
 <?php
 $result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM d_key"); // запрос на выборку сведений о ключах
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
@@ -128,8 +134,9 @@ print("<P>Всего ключей: $num_rows </p>");
 <tr> <!--// вывод «шапки» таблицы-->
  <th> Название </th> <th> URL</th>
  <th> Редактировать </th> 
- <!--#if expr="($_SESSION['type'] == 2)"-->
- <th> Уничтожить </th>  <!--endif-->
+  <?php  
+   if ($_SESSION['type'] == 2) print '<th>Уничтожить </th>'; 
+   ?>
  </tr>
 <?php
 $result=mysqli_query($con,"SELECT id_store, store_name, store_url FROM store"); // запрос на выборку сведений о магаз
@@ -147,11 +154,41 @@ if ($_SESSION['type'] == 2) {
 print "</table>";
 $num_rows = mysqli_num_rows($result); // число записей в таблице БД
 print("<P>Всего магазинов: $num_rows </p>");      
+print '<p> <a href="stores/new.php"> Добавить магазин</a>';
+print	'</div>';
+?>	 
+	 	<div id="txt_4">
+<h2>Игры:
+<table border="1">
+<tr> <!--// вывод «шапки» таблицы-->
+ <th> Логин </th> <th> Пароль </th>
+ <th> Тип </th> 
+ <th> Редактировать </th> <th> Уничтожить </th></tr>
+ <!--<th></th>-->
+<?php
+$result=mysqli_query($con,"SELECT username, password, type FROM users"); // запрос на выборку сведений о пользователях
+while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
+ echo "<tr>";
+ echo "<td>" . $row['username'] . "</td>"; //логин
+ echo "<td>" . $row['password']. "</td>";  //пароль
+ echo "<td>" . $row['type'] . "</td>"; //тип
+ echo "<td><a href='users/edit.php?id=" . $row['id_game']
+. "'>Редактировать</a></td>"; // запуск скрипта для редактирования
+ echo "<td><a href='users/delete.php?id=" . $row['id_game']
+. "'>Удалить</a></td>"; // запуск скрипта для удаления записи
+ echo "</tr>";
+}
+print "</table>";
+$num_rows = mysqli_num_rows($result); // число записей в таблице БД
+print("<P>Всего пользователей: $num_rows </p>");
+print'<p> <a href="games/new.php"> Добавить пользователя</a>';
 ?>
-<p> <a href="stores/new.php"> Добавить магазин</a>
-	 </div>
+</div>
 	 	<p><a href="export/xls.php"> Экспортировать общую таблицу XLS</a>
 		<p><a href="export/pdf.php"> Экспортировать общую таблицу PDF</a>
-		<p><a href="export/pdf.php"> Редактировать свои данные</a>
+	<?php 
+	if ($_SESSION['type'] == 1) {
+	print '<p><a href="users/edit_2.php"> Редактировать свои данные</a>';}
+	?>
 </div>
 </body>
