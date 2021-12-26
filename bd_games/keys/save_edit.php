@@ -6,7 +6,7 @@ $con = new mysqli("localhost", "root", "", "games");
  //mysqli_select_db($con,"users") or die("Нет такой таблицы!");
  
  $g5=$_GET['sale'];
-  $zapros="UPDATE key SET purchase_date='".$_GET['purchase'].
+  $zapros="UPDATE d_key SET purchase_date='".$_GET['purchase'].
 "', expiration_date='".$_GET['expiration']."', game='"
 .$_GET['game']."', store='".$_GET['store'].
 "', key_cost='".$_GET['cost']."', digital_key='".$_GET['dkey']."' WHERE id_digital_key='".$_GET['id']."'";

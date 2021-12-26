@@ -9,7 +9,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
  $con = new mysqli("localhost", "root", "", "games");
 //$con = mysqli_connect('localhost', 'root');
  //mysqli_select_db($con,'games') or die($connect_error);
- $zapr="SELECT purchase_date, expiration_date, game, store, key_cost,digital_key FROM digital_key WHERE id_digital_key='".$_GET['id']."'";
+ $zapr="SELECT purchase_date, expiration_date, game, store, key_cost,digital_key FROM d_key WHERE id_digital_key='".$_GET['id']."'";
  $rows=mysqli_query($con,$zapr);
  while ($st = mysqli_fetch_array($rows,MYSQLI_BOTH)) {
   $id=$_GET['id'];
@@ -71,10 +71,3 @@ print "<p><a href=\"..\index.php\"> Вернуться к спискам</a>";
 ?>
 </body>
 </html>
- 
-
- <!--<P> Магазин: <?php /*echo '<SELECT NAME="store" SIZE="1">';
-   for ($n=0;$n<$k;$n++){
-  echo '<OPTION VALUE="'.$ids[$n].'" SELECTED>'. $store[$n]; }
-  echo '</SELECT>';
- ?>*/

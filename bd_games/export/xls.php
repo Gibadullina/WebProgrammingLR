@@ -27,7 +27,7 @@ require_once('Classes/PHPExcel.php');
 
  //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher,digital_key FROM game, key ";// WHERE id_game='1'";//".$_GET['id']."'";
  $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher,
- digital_key,purchase_date,expiration_date,store_url FROM game_info,digital_key,store WHERE digital_key.game=game_info.id_game AND digital_key.store=store.id_store ";
+ digital_key,purchase_date,expiration_date,store_url FROM game_info,digital_key,store WHERE d_key.game=game_info.id_game AND d_key.store=store.id_store ";
  //$zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher FROM game";
  $rows=mysqli_query($con,$zapr);
  $i=1;

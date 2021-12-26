@@ -32,6 +32,7 @@
 </style></head>
 <body>
 <?php
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 $connect_error = 'Нет такой БД';
 $con = mysqli_connect('localhost', 'root');
 mysqli_select_db($con,'games') or die($connect_error);
@@ -82,7 +83,7 @@ print("<P>Всего игр: $num_rows </p>");
   <th> Игра </th> <th> Цифровой магазин </th> <th> Стоимость </th> <th> Ключ </th> 
  <th> Редактировать </th> <th> Уничтожить </th> </tr>
 <?php
-$result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM digital_key"); // запрос на выборку сведений о ключах
+$result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM d_key"); // запрос на выборку сведений о ключах
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
  echo "<td>" . $row['purchase_date'] . "</td>"; //дата приобр
