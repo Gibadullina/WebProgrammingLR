@@ -39,8 +39,11 @@ require_once('export/Classes/PHPExcel.php');
   $dataArray[$i][3]=$st['game_developer'];
   $dataArray[$i][4]=$st['game_publisher'];
   $dataArray[$i][5]=$st['digital_key'];
-  $dataArray[$i][6]=$st['purchase_date'];
-  $dataArray[$i][7]=$st['expiration_date'];
+  
+ // $dataArray[$i][6]=$st['purchase_date'];
+  $dataArray[$i][6] = date('d-m-Y', strtotime($st['purchase_date']));
+ // $dataArray[$i][7]=$st['expiration_date'];
+  $dataArray[$i][7] = date('d-m-Y', strtotime($st['expiration_date']));
   $dataArray[$i][8]=$st['store_url'];
   $i++;
  }

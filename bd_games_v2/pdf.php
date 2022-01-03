@@ -44,8 +44,8 @@ $zapr="SELECT id_game, game_name, game_genre, game_developer, game_publisher,
   $rows = $rows. "<td>".$st['game_developer']."</td>";
   $rows = $rows. "<td>".$st['game_publisher']."</td>";
   $rows = $rows. "<td>".$st['digital_key']."</td>";
-  $rows = $rows. "<td>".$st['purchase_date']."</td>";
-  $rows = $rows. "<td>".$st['expiration_date']."</td>";
+  $rows = $rows. "<td>".date('d-m-Y',strtotime($st['purchase_date']))."</td>";
+  $rows = $rows. "<td>".date('d-m-Y',strtotime($st['expiration_date']))."</td>";
   $rows = $rows. "<td>".$st['store_url']."</td>";
   $rows = $rows. "</tr>";
   $i++;

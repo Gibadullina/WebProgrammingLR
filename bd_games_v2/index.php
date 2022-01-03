@@ -110,8 +110,8 @@ print("<P>Всего игр: $num_rows </p>");
 $result=mysqli_query($con,"SELECT id_digital_key, purchase_date, expiration_date, game,store, key_cost, digital_key FROM d_key"); // запрос на выборку сведений о ключах
 while ($row=mysqli_fetch_array($result)){// для каждой строки из запроса
  echo "<tr>";
- echo "<td>" . $row['purchase_date'] . "</td>"; //дата приобр
- echo "<td>" . $row['expiration_date'] . "</td>";  //дата оконнчания
+ echo "<td>" .date('d-m-Y', strtotime($row['purchase_date'])). "</td>"; //дата приобр
+ echo "<td>" .date('d-m-Y', strtotime($row['expiration_date'])). "</td>";  //дата оконнчания
  echo "<td>" . $row['game'] . "</td>"; //игра
   echo "<td>" . $row['store'] . "</td>"; //магазин
    echo "<td>" . $row['key_cost'] . "</td>"; //стоимость
